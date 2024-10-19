@@ -59,7 +59,6 @@ while [[ $# -gt 0 ]]; do
 			echo "Directory $1 already empty"
 		else
 			mv "$1"/* "$1"/.[!.]* "$DEST_DIR"/
-			#mv "$1"/* "$1"/.* "$DEST_DIR"/
 			file_count=$(find "$1" -maxdepth 1 -type f | wc -l)
 			if [ "$file_count" -ne 0 ]; then
 				echo "Error in file transfer, $file_count files couldn't be transferrred"

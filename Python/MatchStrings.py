@@ -1,4 +1,4 @@
-def main() -> bool:
+def stringMatch() -> bool:
     text = str(input("Input the main string: "))
     matching = str(input("Input the string to seek for a match: "))
     if len(text) < len(matching):
@@ -9,7 +9,7 @@ def main() -> bool:
     return False
 
 if __name__ == '__main__':
-    result = main()
+    result = stringMatch()
     if result:
         print("Matched!")
     else:
