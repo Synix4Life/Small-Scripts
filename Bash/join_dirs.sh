@@ -27,6 +27,8 @@ if [ "$#" -lt 1 ]; then
 	exit 1
 fi
 
+rmd=0
+
 while [[ "$1" == -* ]]; do
 	case "$1" in 
 		-h | --help)
@@ -45,7 +47,6 @@ done
 
 mkdir -p "$1"
 DEST_DIR="$1"
-rmd=0
 shift
 
 file_count=0
@@ -56,18 +57,18 @@ while [[ $# -gt 0 ]]; do
 	if [ -d "$1" ]; then
 		file_count=$(find "$1" -maxdepth 1 -type f | wc -l)
 		if [ "$file_count" -eq 0 ]; then
-			echo "Directory $1 already empty"
+			echo -e "\n\033[1;32m[  NOTE  ]\033[0m \033[1;36mDirectory $1 already empty\033[0m"
 		else
 			mv "$1"/* "$1"/.[!.]* "$DEST_DIR"/
 			file_count=$(find "$1" -maxdepth 1 -type f | wc -l)
 			if [ "$file_count" -ne 0 ]; then
-				echo "Error in file transfer, $file_count files couldn't be transferrred"
+				echo -e "\n\033[1;31m[  ERROR  ]\033[0m \033[1;33mFile transfer failed: $file_count files couldn't be transferrred from folder $1\033[0m"
 			elif [ "$rmd" -eq 1 ]; then
 				rm -rf "$1"
 			fi
 		fi
 	else
-  		echo "Source directory $1 does not exist."
+  		echo -e "\n\033[1;31m[  WARNING  ]\033[0m \033[1;33mSource directory $1 does not exist.\033[0m"
   		exit 1
 	fi
 	shift
