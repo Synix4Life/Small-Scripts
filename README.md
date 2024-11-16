@@ -2,6 +2,7 @@
 
 <h3>Included Languages</h3>
 
+![C](https://img.shields.io/badge/C-gray?style=for-the-badge&logo=c&logoColor=white)
 ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
 ![Shell Script - Bash](https://img.shields.io/badge/Shell_Script_(Bash)-black?style=for-the-badge&logo=gnu-bash&logoColor=white)
 
