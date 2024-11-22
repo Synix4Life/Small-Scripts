@@ -19,18 +19,18 @@ Just a collection of small semi-useful scripts i have written
 
 ### $\textsf{\color{white}Bash - Shell Script}$
 
-- $\textsf{\color{white}join\_dirs.sh}$
+- $\textsf{\color{white}Join Directories}$
 
 - $\textsf{\color{white}ThankTheBusDriver}$
 
 ### $\textsf{\color{lightgray}C}$
 
-- $\textsf{\color{lightgray}double\_to\_fraction.c}$
+- $\textsf{\color{lightgray}Double → Fraction}$
 
 ### $\textsf{\color{#4F8BBF}C++}$
 
-- $\textsf{\color{#4F8BBF}is\_it\_int.cpp}$
+- $\textsf{\color{#4F8BBF}Is it an Integer?}$
 
 ### $\textsf{\color{aqua}Python}$
 
-- $\textsf{\color{aqua}MatchStrings.py}$
+- $\textsf{\color{aqua}Match Strings}$
