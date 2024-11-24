@@ -1,3 +1,5 @@
+import Exception.ParameterException;
+
 /**
  * Class that calculates a PIN out of a String
  */
@@ -20,13 +22,19 @@ class StrToPIN{
      * Calculate the PIN
      * @param Phrase The String
      * @param MAXLength MaxLength of the PIN
+     * @param MINLength MINLength of the PIN
      * @param Multiplication Shall the programm to Multiplication? Default is Addition
      * @return The PIN
      * @throws IllegalArgumentException If the MAXLength is less than 1
+     * @throws ParameterException If the MAXLength<= MINLength
+     * @throws ArithmeticException If a calculation error occurs
      */
-    public static long calculatePIN(String Phrase, int MAXLength, boolean Multiplication) throws IllegalArgumentException{
+    public static long calculatePIN(String Phrase, int MAXLength, int MINLength, boolean Multiplication) throws IllegalArgumentException, ParameterException, ArithmeticException{
         if(MAXLength<=0){
             throw new IllegalArgumentException("MAXLength isn't allowed to be less than 1!");
+        }
+        if(MAXLength < MINLength){
+            throw new ParameterException("MINLength <= MAXLength!");
         }
         long result = Multiplication ? 1 : 0;
         for(char c: Phrase.toCharArray()){
@@ -38,45 +46,23 @@ class StrToPIN{
             }
         }
         
-        do{
-            result = CrossSum(result);
-        }while(result > MAXLength);
+        int i;
+        for(i=0; i<501; i++){
+            if(result > MAXLength){
+                result = CrossSum(result);
+            }
+            else if(result < MINLength){
+                result += CrossSum(result);
+            }
+            else{ 
+                break; 
+            }
+        }
+
+        if(i==500){
+            throw new ArithmeticException("Calculation Error");
+        }
         
         return result;
     }
-
-    /**
-     * Calculate the PIN
-     * @param Phrase The String
-     * @return The PIN
-     */
-    public static long calculatePIN(String Phrase){
-        return calculatePIN(Phrase, 4, false);
-    }
-
-    /**
-     * Calculate the PIN
-     * @param Phrase The String
-     * @param MAXLength MaxLength of the PIN
-     * @throws IllegalArgumentException If the MAXLength is less than 1
-     * @return The PIN
-     */
-    public static long calculatePIN(String Phrase, int MAXLength) throws IllegalArgumentException{
-        try{
-            return calculatePIN(Phrase, MAXLength, false);
-        }catch(IllegalArgumentException e){
-            throw new IllegalArgumentException("MAXLength isn't allowed to be less than 1!");
-        }
-    }
-
-    /**
-     * Calculate the PIN
-     * @param Phrase The String
-     * @param Multiplication Shall the programm to Multiplication? Default is Addition
-     * @return The PIN
-     */
-    public static long calculatePIN(String Phrase, boolean Multiplication){
-        return calculatePIN(Phrase, 4, Multiplication);
-    }
-
 }
