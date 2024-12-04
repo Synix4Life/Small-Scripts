@@ -2,6 +2,9 @@
 
 #include <vector>
 
+/**
+ * A matrix implementation
+ */
 class Matrix{
     private:
         int height;
