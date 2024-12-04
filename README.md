@@ -28,6 +28,8 @@ Just a collection of small semi-useful scripts i have written
 
 ### $\textsf{\color{#4F8BBF}C++}$
 
+- $\textsf{\color{#4F8BBF}Matrix Implementation}$
+
 - $\textsf{\color{#4F8BBF}Is it an Integer?}$
 
 ### $\textsf{\color{#ED8B00}Java}$
