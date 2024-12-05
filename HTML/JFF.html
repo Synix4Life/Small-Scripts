@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <style>
+            h1 {
+                text-align: center;
+                font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+                color: white;
+            }
+            button {
+                position: relative;
+                border:none;
+                transition: .4s erase-in;
+                z-index: 1;
+            }
+            button::before,
+            button::after{
+                position: absolute;
+                content: "";
+                z-index: -1;
+            }
+            .btn1:hover {
+                background: #2bff00;
+                box-shadow: 0 0 5px #2bff00, 0 0 25px #27ed00, 0 0 50px #24d800, 0 0 200px #21c700;
+            }
+            body {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+                background-color: black;
+            }
+        </style>
+        <title>
+            Just a redirect...
+        </title>    
+    </head>
+    <body>
+        <h1 style="font-size: 45px;">
+            Github
+        </h1>
+        <button class="btn1" style="padding: 10px 20px; font-size: 22px; outline-style:none;">
+            <a href="https://www.github.com/Synix4Life" style="text-decoration: none; color: inherit;">
+              ← :> →
+            </a>
+          </button>
+    </body>
+</html>
