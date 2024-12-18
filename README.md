@@ -35,13 +35,15 @@ Just a collection of small semi-useful scripts i have written
 
 - $\textsf{\color{#4F8BBF}Is it an Integer?}$
 
-### $\textsf{\color{#E34F26} A}$
+### $\textsf{\color{#E34F26} HTML}$
 
 - $\textsf{\color{#E34F26} Just for fun :)}$
 
 ### $\textsf{\color{#ED8B00}Java}$
 
 - $\textsf{\color{#ED8B00}Awesomest class ever}$
+
+- $\textsf{\color{#ED8B00}Merge Sort}$
 
 - $\textsf{\color{#ED8B00}String to PIN}$
 
