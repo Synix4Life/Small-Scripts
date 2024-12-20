@@ -45,6 +45,8 @@ Just a collection of small semi-useful scripts i have written
 
 - $\textsf{\color{#ED8B00}Merge Sort}$
 
+- $\textsf{\color{#ED8B00}Random Sort}$
+
 - $\textsf{\color{#ED8B00}String to PIN}$
 
 ### $\textsf{\color{aqua}Python}$

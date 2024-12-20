@@ -9,7 +9,7 @@ class StrToPIN{
      * @param value The Integer
      * @return The Cross Sum
      */
-    private static long CrossSum(long value){
+    private static long crossSum(long value){
         int result = 0;
         while(value > 0){
             result += value % 10;
@@ -29,16 +29,16 @@ class StrToPIN{
      * @throws ParameterException If the MAXLength<= MINLength
      * @throws ArithmeticException If a calculation error occurs
      */
-    public static long calculatePIN(String Phrase, int MAXLength, int MINLength, boolean Multiplication) throws IllegalArgumentException, ParameterException, ArithmeticException{
-        if(MAXLength<=0){
+    public static long calculatePIN(String phrase, final int maxLength, final int minLength, final boolean multiplication) throws IllegalArgumentException, ParameterException, ArithmeticException{
+        if(maxLength<=0){
             throw new IllegalArgumentException("MAXLength isn't allowed to be less than 1!");
         }
-        if(MAXLength < MINLength){
+        if(maxLength < minLength){
             throw new ParameterException("MINLength <= MAXLength!");
         }
-        long result = Multiplication ? 1 : 0;
-        for(char c: Phrase.toCharArray()){
-            if(Multiplication){
+        long result = multiplication ? 1 : 0;
+        for(char c: phrase.toCharArray()){
+            if(multiplication){
                 result *= (int) c;
             }
             else{
@@ -48,11 +48,11 @@ class StrToPIN{
         
         int i;
         for(i=0; i<501; i++){
-            if(result > MAXLength){
-                result = CrossSum(result);
+            if(result > maxLength){
+                result = crossSum(result);
             }
-            else if(result < MINLength){
-                result += CrossSum(result);
+            else if(result < minLength){
+                result += crossSum(result);
             }
             else{ 
                 break; 
